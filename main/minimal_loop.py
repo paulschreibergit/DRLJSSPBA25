@@ -61,7 +61,10 @@ for ep in range(1, EPISODES + 1):
         partial, g_next, n_next, _, step_r, done = step(
             jobs, partial, action, node_info
         )
-        visualize_pyg_graph(g_next, n_next)
+        
+        if steps % 15 == 0:
+            visualize_pyg_graph(g_next, n_next)
+            
         # Buffer füllen
         trainer.store(
             graph.cpu(),
