@@ -1,5 +1,10 @@
 # -----------------------------------------------------------------------------
-# Actor-only PPO für JSSP – 100 % eigenständig lauffähig
+# AI-Assisted Code
+# Erstellt mit Unterstützung von OpenAI ChatGPT (Mai 2025)
+# Überarbeitet und validiert durch: Paul Schreiber
+#
+# Anmerkung:
+# - Kernlogik und Boilerplate in dieser Datei stammen aus KI-Vorschlägen.
 # -----------------------------------------------------------------------------
 import torch, torch.nn as nn, torch.nn.functional as F
 from torch.distributions import Categorical
