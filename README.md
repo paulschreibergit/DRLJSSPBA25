@@ -6,8 +6,7 @@ Ein Teil dieses Repositories wurde mithilfe von OpenAI ChatGPT (Stand Mai 2025) 
 und strukturellen Ergänzung einzelner Funktionen, insbesondere im Zusammenhang mit:
 
 - GNN-Policy-Netzwerkstrukturen
-- PPO-Trainingslogik mit Action Masking
-- Reward-Shaping-Funktionen
+- PPO-Trainingslogik
 - Debugging-Tools und Visualisierungshilfen
 
 **Nachhaltige Prüfung und Überarbeitung durch den Autor**  
@@ -28,3 +27,42 @@ vom Autor entwickelt, geplant und in dieser Form selbständig umgesetzt worden.
 Der Einsatz von ChatGPT erfolgte im Einklang mit den Nutzungsbedingungen von OpenAI.  
 Die finale Verantwortung für Funktionalität, Korrektheit und Sicherheit des Codes liegt beim Autor.
 
+---
+```
+DRLJSSPBA25/
+│
+├── agent/                 # GNN-Policy & Trainingslogik
+├── environment/           # Zustandsrepräsentation, Reward, Maskierung
+├── main/                  # Ausführungsskripte
+├── utils/                 # Solver, Parser, Hilfsfunktionen
+├── visualization/         # Graphbasierte Visualisierung
+├── requirements.txt
+```
+---
+# Quickstart: DRL-Agent für Job-Shop Scheduling
+
+Dieses Repository enthält einen Deep-Reinforcement-Learning-Ansatz zur schrittweisen Lösung von Job-Shop-Scheduling-Problemen (JSSP). Im Folgenden findest du eine  Anleitung zur Ausführung des Codes.
+
+---
+
+### 1. Repository klonen und initialisieren
+
+```bash
+git clone https://github.com/paulschreibergit/DRLJSSPBA25.git
+cd DRLJSSPBA25
+python3 -m venv .venv
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+> **Hinweis:**  
+> - Die Trainingslogik befindet sich im Skript `main/minimal_loop.py` und dient als Ausgangspunkt für alle Abläufe.  
+> - Das Repository arbeitet mit klassischen JSSP-Benchmark-Instanzen im OR-Library-Format (z. B. `ft06.txt`).
+>   Diese Textdateien bestehen aus einer Kopfzeile mit der Anzahl an Jobs und Maschinen, gefolgt von zeilenweisen Job-Operationen im Format:  
+>   ```
+>   6 6
+>   1 6 3 7 5 3 4 6 ...
+>   ```
+> - Die Konvertierung erfolgt **automatisch beim Start** des Trainings: Der integrierte Parser (`txt_instance_to_list.py`) liest die `.txt`-Datei ein und wandelt sie intern in eine Listenstruktur um.  
+> - Es musst lediglich der Pfad zur gewünschten `.txt`-Instanz korrekt übergeben werden.
+---
